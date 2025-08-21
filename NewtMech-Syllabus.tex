@@ -1,0 +1,319 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       	    Preamble                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\setlength{\headheight}{23pt}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{multirow}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{yfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[colorlinks]{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[sorting=none]{biblatex}
+%\usepackage{exercise}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+{\theoremstyle{definition} \newtheorem{exercise}{Exercise}}
+{\theoremstyle{definition} \newtheorem{definition}{Definition}}
+{\theoremstyle{definition} \newtheorem{note}{Note}}
+{\theoremstyle{definition} \newtheorem{notei}{Note*}}
+{\theoremstyle{definition} \newtheorem{prove}{Prove}}
+\newtheorem*{remark}{Remark}
+\newtheorem*{warning}{Warning}
+\newtheorem*{example}{Example}
+
+\begin{document}
+
+\section{Overview}
+
+Primary resource: University Physics Fifteenth Edition
+
+Secondary resource: An Introduction to Mechanics by Daniel Kleppner and Robert Kolenkow
+
+Prerequisites: Algebra 2
+
+Introduction to classical mechanics from the Newtonian perspective.
+Development of physical intuition as preparation for future physics study.
+Some important topics are kinematics, momentum, energy, and angular momentum.
+
+\section{Objectives}
+
+\begin{itemize}
+
+\item Get a sense for the foundation of early classical mechanics, e.g. forces, energy, etc.
+
+\item Type up clear and presentable solutions in LaTeX.
+
+\item Understand applications of the theory to real world, e.g. engineering,
+
+\item Performing guided independent research.
+
+\item Writing and delivering public talks.
+
+\item Experimental design and theoretical understanding of concrete experiments.
+
+\item Tackle challenging problems independently and in collaboration with your peers.
+
+\end{itemize}
+
+
+\section{Projects}
+
+Your goal for any given project is to design an experiment, understand the theory, and perform your experiment.
+My definition of ``experiment" is vague and this could just as well be an engineering project.
+Whatever it is should be a goal that is attainable for you and most of all \textit{exciting} for you.
+This will require a good deal of your attention, so whatever your choice, it should hold your interest until the ordeal is over.
+
+The final product of your work should be a talk given to myself, your fellow students in the class, and anyone else that is interested in attending.
+This will include an abstract that succinctly explains to the listener what they are in for, the talk itself, and a short exercise that you feel is essential for understanding the material that you will assign to your peers.
+You will also provide a demonstration of your work in action.
+
+Along the way there will be many checkpoints for you to hit: at the midpoint of the semester everyone will give a preliminary talk in order to get everyone's feet wet.
+This talk will be public as well.
+So in total you will be expected to give two talks open to the school over the course of the semester.
+Before each of these you will submit an outline of your talk, which I will provide feedback on.
+I will provide everyone the opportunity to perform a practice talk before their official presentation.
+I strongly encourage taking me up on this opportunity but it will not be required.
+Public speaking is difficult and the more practice you get, the better you will do.
+During and after your practice talk I will provide you as much feedback as you want or need and it will not affect your grade at all - very low pressure, the only point being to get you more experience.
+
+The exact timings of things will be flexible and we will work together to make sure everyone's schedules work so that everyone has a chance to speak and be heard by all their peers.
+Ideally, the sequence of outline, practice, talk will be spaced out over a period of three weeks, but this can be made flexible based on scheduling.
+
+Another expectation is for everyone to ask at least one question at every talk.
+The ability to think of important questions during a talk is an extremely important skill to develop and likewise the ability to respond to them.
+It is also perfectly fine to not know the answer to a question (that means it was a good question), you should know how to handle situations like this as well.
+
+An important couple of notes about the following list of topics: they are in no way exhaustive.
+If there is a topic you are excited about and it does not appear on this list, by all means do that instead!
+In any case, we will need to work together to figure out an appropriate curriculum to be followed and attainable results to work toward.
+Many of the topics listed here are challenging and it may make sense to choose something more straightforward, particularly in the first semester.
+
+\begin{itemize}
+
+\item Measurements
+\begin{itemize}
+\item Coriolis effect
+\item Magnus effect
+\item Gravitational constant
+\item Earth's radius
+\item Gravitational vs inertial mass
+\end{itemize}
+
+\item Algorithms
+\begin{itemize}
+\item Numerical integrators
+\item $N$-body simulations (cosmology)
+\end{itemize}
+
+\item Theory
+\begin{itemize}
+\item Noether's theorem (this topic comes with the baggage of Lagrangian mechanics)
+\item Principle of virtual work
+\item Runge-Lenz vector (or other topics in conserved quantities or other topics in orbital mechanics)
+\end{itemize}
+
+\end{itemize}
+
+\section{Course Structure}
+
+Most learning will take place in class.
+The in-class period will usually consist of material exposition (results at the board, providing background, etc) and student effort toward working results and filling in details.
+There will also be in-class time for working on your independent projects, although that will largely take place outside of class.
+
+The week of midterms will be devoted to your first talk and finals week will be for the second talk.
+You may schedule a practice talk at any time I have available the prior week, including lunches.
+Each talk should be 30 to 45 minutes.
+Depending on the content, you may present a slideshow or a chalk-talk.
+
+The second week of school you must schedule a meeting with me in order to discuss your project topic, so you have one week to make a decision.
+The third week of school we will meet again to discuss materials, intended goals for your presentations, and a timeline to help you reach those goals.
+You should be able to present some basic information, like core definitions for our second meeting.
+
+Every Friday after the first meeting you must submit a short progress report  on your project.
+This can be the a few calculations, a conceptual discussion of your reading, a snippet of annotated code for a piece of a larger algorithm, etc.
+You can essentially submit anything as long as it illustrates how much progress you made over the course of the week.
+Included in your report should be an explanation of how this work gets you closer to your longterm goal and short term goals that you want to set for yourself for the following week.
+The point of this is to ensure you work consistently; I cannot stress enough that you cannot wait until the last minute to work on your project.
+
+Since the categories of projects I have laid out are so different there are different expectations.
+If you are doing something experimental you will be expected to understand the theory behind your future work at least to a strong intuitive level.
+You need not understand all of the math, but you must be able to present the big picture idea and some of the details that explain the effect.
+You will also present a plan for your construction, including a diagram.
+Your diagram should have complete (realistic) dimensions and should display real parts you have selected.
+Your budget should be under \$15.
+Your final talk will explain the theory with most details accounted for, your results, a demonstration if applicable, and a discussion of experimental uncertainties.
+
+If you are working on an algorithm, the expectations for the first talk are similar.
+Some theoretical details understood, an accompanying explanation of your algorithm, and a functioning snippet of code that performs a small task necessary for your larger body of work.
+Your final talk will explain the theory with most details accounted for and a discussion on what physical problems you are able to handle with what you've written.
+
+If you're working on something more theoretical your first talk should have some preliminary results and a big picture discussion on your topic.
+For example, if you're studying Noether's theorem you should discuss the Lagrangian, etc.
+Your final talk should explain your topic in detail and provide an at least conceptual derivation from principals in class.
+
+
+\section{Grading}
+
+Your grade will be broken down as follows by percentage:
+
+\begin{itemize}
+
+\item Homework: 10\%
+
+\item In-class participation: 30\%
+
+\item Projects: 60\%
+
+\begin{itemize}
+\item 30\% for each half of the semester
+
+\begin{itemize}
+\item Weekly updates: 10\%
+\item Companion notes to your talk: 10\%
+\item Presentation: 10\%
+\begin{itemize}
+\item Your talk: 5\%
+\item Questions during each talk: 5\%
+\end{itemize}
+\end{itemize}
+
+\end{itemize}
+
+\end{itemize}
+
+
+\section{Policies}
+
+\begin{itemize}
+\item Typed up proofs from a period will be due by the next non-Friday class period on entry to the room.
+
+\item Weekly practice will be due on Friday at 12:20 pm.
+
+\item Late work receives a 10\% penalty every day late starting at 12:25 pm.
+
+\item In-class time is spent engaged with lecture - active participation, exercises should be worked individually or in groups as requested, equal engagement and respect during group work.
+
+\item Respectful to each other at all times (we are all here to learn, do not demean others for their contributions).
+
+\item No technology unless expressly permitted.
+
+\item Leave your workspace tidy on exit.
+
+\item Arrive to class on time.
+
+\item No eating in class.
+
+\item Cite all sources including each other.
+
+\item If AI is used you must cite this as well and explain what it was used for.
+I cannot stop you from using AI outside of class, be responsible.
+If you need help on a problem you should 1. talk to each other, 2. talk to me, 3. read a forum or article.
+If you feel pressure to use AI for whatever reason, use prompts that don't immediately give away the answer.
+Feeling stuck is normal and part of the process, if you give up any time you get stuck you are harming your own learning.
+It may be useful to use AI assistance when writing LaTeX code especially when starting out, but this must also be disclosed.
+
+\item If AI or other sources are used without disclosure, you will receive a zero for the assignment and a penalty to your participation grade.
+This will be considered academic dishonesty.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

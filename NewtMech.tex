@@ -1,0 +1,610 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       	    Preamble                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{book}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\setlength{\headheight}{23pt}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{multirow}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{yfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[colorlinks]{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[sorting=none]{biblatex}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+{\theoremstyle{definition} \newtheorem{exercise}{Exercise}}
+{\theoremstyle{definition} \newtheorem{exercisei}{Exercise*}}
+\newtheorem{definition}{Definition}
+\newtheorem*{remark}{Remark}
+\newtheorem*{warning}{Warning}
+\newtheorem*{example}{Example}
+
+\begin{document}
+
+\tableofcontents
+\mainmatter
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\<}{\left\langle}
+\renewcommand{\>}{\right\rangle}
+\renewcommand{\Re}[1]{\text{Re}\ #1}
+\renewcommand{\Im}[1]{\text{Im}\ #1}
+\renewcommand{\mod}[1]{(\operatorname{mod}#1)}
+%\newcommand{\itemize}[1]{\begin{itemize}#1\end{itemize}}
+
+
+
+
+
+
+
+
+%\chapter{Math Methods}
+%
+%\exercise{For $v\in\R^3$, with the usual $\hat x,\hat y,\hat z$ orthonormal basis chosen.
+%Let $\alpha,\beta,\gamma$ with $v\cdot\hat x=|v|\alpha$, $v\cdot\hat y=|v|\beta$, $v\cdot\hat z=|v|\gamma$.
+%Show that $\alpha^2+\beta^2+\gamma^2=1$.}
+%
+%\exercise{Show that if $|v-w|=|v+w|$, then $v\perp w$ for $v,w\in\R^n$.}
+%
+%\exercise{Prove that the diagonals of an equilateral parallelogram are orthogonal.}
+%
+%\exercise{Prove the law of sines using the cross product.
+%Hint: What is the area of the triangle formed by $a,b,c$ with $a+b+c=0$?}
+%
+%\exercise{A tire rolls in a straight line without slipping, with center of mass velocity $v$ a constant.
+%At $t=0$ a pebble lodged flush within the tread of the tire touches the road.
+%Find the position, velocity, and acceleration of the pebble as a function of time.}
+%
+%\exercise{Go through the steps of integration to show the following:
+%
+%\item $$\int_1^2 dr \int_0^\pi d\theta \text{ } r^2\sin\theta\exp(-i\pi r\cos\theta)=-\frac{6}{\pi^2}.$$
+%
+%Attack this in the following way: compute the $\theta$ integral first by changing your variable of integration, noting that $d\cos\theta=\sin\theta d\theta$.
+%Don't forget to tend to your limits of integration!
+%The final step is a single integration by parts on an integrand that looks like $2r\sin r$.
+%
+%Note that the final answer is related to the solution of the famous Basel problem and $\zeta(2)$ where $\zeta$ is the Riemann-$\zeta$ function.
+%I encourage you to peruse the Wikipedia pages on both of these.}
+
+
+\chapter{Kinematics}
+
+\exercise{What is the mass of a gold cube $1/100$km in each direction, in kg if the density of gold is $19.3$g/cm$^3$?}
+
+\exercise{How many nanoseconds does it take light to travel 1.00 ft in vacuum?}
+
+\exercise{An electron has a mass of $1/2$MeV$/c^2$ (mega electronvolts per the speed of light squared).
+Convert this to kilograms, showing your steps.}
+
+\exercise{A single strand of horse hair breaks at a tension $T$.
+A rope is made of $N$ horse hairs and it's attached to an object of mass $m$.
+How high must you drop the object from in order to break the rope when you catch it at the other end?
+Just use unit analysis and plug in approximate numbers you find online.
+We will return to this in a bit.
+
+This is a bit contrived, but it can inform someone with a quick calculation for instance, how deep a water well can be and have their rope survive if they drop their retrieval bucket.}
+
+\exercise{Use unit analysis to create an energy from $G_F$ and predict the existence of the electroweak scale.}
+
+\exercise{A ball rolls down a hill with uniform acceleration, which is not known.
+The ball takes a time $2t$ to reach the bottom of the hill and during the second half of this time travels a total distance $d$.
+How long is the slope of the hill?}
+
+\exercise{Find the vector pointing between a point $p$ and a point $q$ in the $x-y$ plane.
+
+Find the displacement between $p$ and $q$.}
+
+\exercise{Say you travel to a point $p$ and your neighbor travels to a point $q$.
+If the direction pointing to the point $p$ is $\hat p$, how far did your neighbor travel along the $\hat p$ direction?
+What is the angle between your paths?}
+
+\exercise{Compute the area of the triangle with vertices $0$ (the origin), $p$, and $q$ geometrically and by using the cross product.}
+
+\exercise{A small platform is a distance $h$ above you and a distance $d$ in front.
+You would like to throw an egg onto said platform.
+With what initial velocity must you throw the egg so that the downward component of velocity is zero when it lands on the platform?
+
+Use this demonstration to devise an experiment that measures the acceleration due to gravity at sea level.}
+
+\exercise{A tower is leaning (perhaps a famous one), and you'd like to know by how much.
+At noon, you measure the distance from the base of the tower to the tip of its shadow to be a length $\ell$.
+You drop a ball from the top of the tower and note that it took a time $t$ to reach the ground.
+At what angle does the tower lean?}
+
+\exercise{A careless construction worker drops a ball bearing of unknown material from the top of a structure of height $h$.
+If it takes a time $t$ to hit the ground, how fast is it moving when it hits the ground?}
+
+\exercise{Given a point $p$ with coordinates $(x,y)$, draw a right triangle between that point and the origin.
+
+Write the angle $\theta$ between the $x$ axis and the hypotenuse in terms of $x$ and $y$.
+Write the hypotenuse $r$ in terms of $x,y$.
+Now going backwards write $x$ and $y$ in terms of $r,\theta$}
+
+\exercise{Describe the set of points cut out by the equation $x^2+y^2=r^2$.
+Do this again in radial polar coordinates.}
+
+\exercise{A ball is spun around with an angular velocity $\omega$ at a radius $r$.
+What is the velocity of the ball tangent to its motion?
+Guess the answer with unit analysis, then make a short geometric argument that you're correct.}
+
+\exercise{You are given a ball attached to a string, resting on a frictionless table of height $h$.
+The ball is being spun with an angular velocity $\omega$ when the string snaps.
+How far away from the table is the ball when it hits the ground?}
+
+\exercise{A ball on a string of length $l$ is spun in a circle at constant angular speed.
+The tension in the string is $T$ at all times and the ball does not move in the radial direction.
+What is the angular speed of the ball?
+What will the angular speed be if the length is reduced to $l/2$?
+
+Assuming counterclockwise motion, find the angle the string makes with some arbitrarily chosen direction as a function of time.
+
+The direction you've chosen has induced a cartesian coordinate system: the $x$ direction is the direction you point in when $\theta=0$ and $y$ is the orthogonal direction you point in when $\theta=\pi/2$.
+Show that these coordinates are right-handed.
+Express your previous solution for the motion of the ball in cartesian coordinates.}
+
+\exercise{This will be the first in a series of problems in which we will learn to measure the measure the radius of the earth using only knowledge from geometry and shadows.
+Allegedly, the first person to conduct such an experiment was Eratosthenes in Greece around 240 BC.
+We have all of the tools already to solve this problem exactly, but if you dare to carry out such a solution you will quickly see that it is more or less incomprehensible.
+
+The set up is as follows: Eratosthenes lived in Syrene, where it was known that a certain well was directly below the sun on the summer solstice.
+On the same line of longitude, due north, there was a tall pole located in Alexandria (\textbf{being on the same line of longitude reduces the problem to 2 dimensions. Your first task is to explain why}).
+On the day of the summer solstice, the shadow cast by said pole was measured at noon.
+One can relate the length of the shadow to the radius of the earth, and this provides a measure that is now known to be within roughly 1\% error of modern techniques.
+Bask in the awe of the simplicity and accuracy of this technique for a moment.
+
+We will start with a simplified setup.
+Pretend for a moment that the earth is flat.
+The problem is 2d (as you have described) so we work in an $x-y$ plane.
+We will fix the sun (modeled as a point) to the origin, and say that the $y$ direction represents the direction parallel to the flat earth.
+The $x$-axis is then the one that points from the sun to the earth.
+We say that, at noon, the sun is directly overhead the point $(R,0)$ on earth (so the entire earth is the line $x=R$).
+
+Now a distance $d$ away from the point $(R,0)$ on earth, we put a pole of height $h$.
+How long is the pole's shadow?
+Provide as well an approximate result for a large separation between the earth and the sun.
+
+This case is not directly related to the problem of interest, but it is a simpler case that will allow us to check our work later on.
+In the next chapter, we will replace the earth with a circle.}
+
+
+\chapter{Newton's Laws}
+
+\exercise{If an asteroid is sent toward earth from deep in space, will it make it here?
+How fast will it be going if it reaches us?}
+
+\exercisei{Simple force problems}
+
+\exercise{A book sits on a table, what force should the table provide to hold up the book?}
+
+\exercise{An engineer gives you a building (generous) and your task is to analyze normal forces that hold the building together.
+
+Give two examples of important normal forces in this context (pick your favorite building) and estimate how strong they must be.}
+
+\exercise{Two particles of mass $m$ and $M$ undergo uniform circular motion
+about each other at a separation $R$ under the influence of an attractive
+force $F$. The angular velocity is $\omega$.
+
+Show that $$R=\frac{F}{\omega^2}\left(\frac{1}{m}+\frac{1}{M}\right).$$
+Explain in gory detail how the units make sense.}
+
+\exercise{A block of mass $m_1$ rests on a block of mass $m_2$ which lies on a frictionless table. The coefficient of friction between the blocks is $\mu$.
+What is the maximum horizontal force which can be applied to the blocks
+for them to accelerate without slipping on one another if the force is applied to (a) block 1 and (b) block 2?
+
+After you've found formulas for the above, say that $m_1=100$kg, $m_2=10$kg, and $\mu=0.4$.
+Quote the forces in either case in Newtons.
+Do the same if we swap $m_1,m_2$.
+
+Explain how your result makes intuitive sense.}
+
+\exercise{What should the relative sizes of static and kinetic friction coefficients be?
+What would happen if the order were reversed?
+You should see that this second case is nonsense.}
+
+\exercise{Two blocks $A$ and $B$ with masses $m_a,m_b$ are attached by a rope (with a mass much smaller than $A$ or $B$) and rest on a table without friction.
+We know the mass $m_a$ and would like to measure the other.
+A force $F$ is applied to $A$ so that $B$ is dragged along with it.
+Over the course of a time $t$ with $F$ applied, the block moves a distance $d$.
+Find the tension $T$ within the rope and from that, the mass $m_b$.
+
+Compute the limit $m_a\to0$ and comment on your result.}
+
+\exercise{A block of mass $m$ is pushed so that it has initial velocity $v$ at $x=0$.
+It has a coefficient of friction $\mu$ with the table it slides on.
+It takes a time $t$ to come to a full stop.
+What is $\mu$?}
+
+\exercise{A block of mass $m$ hangs from a spring with constant $k$.
+Devise an experiment that allows for the measurement of the acceleration due to gravity at sea level.}
+
+\exercise{You are given a pendulum.
+You measure the length of said pendulum to be $l$ and the mass of the bob at the end to be $m$, with the mass of the string small enough to neglect.
+You decided (at the whim of some outside presence) to watch the motion of the bob after being released from rest.
+You note that friction seems to be negligible (a gift, truly).
+Assuming you're at sea level, draw the pendulum at some angle and attach a free-body diagram for the bob.
+
+Draw a free-body diagram and find the tangential force on the pendulum bob as a function of $\theta$, the angle the pendulum makes with the vertical direction.
+Use Newton's law to obtain an equation for the acceleration in the tangential direction.
+
+What quantity is missing from this expression that you might expect to find there?
+Explain how the units make sense.
+Suppose that the angle that you release the pendulum from is very small.
+Use the small angle approximation to show that the pendulum undergoes simple harmonic motion in this regime.
+What is the frequency of the oscillator?
+Use your findings to devise an experiment that can measure the acceleration due to gravity $g$, at sea level.}
+
+
+\chapter{Momentum}
+
+\exercise{This and the following problem are in relation to experiments conducted in class.
+
+For the first, we observed a ball rolling off a desk and measured the velocity as a function of time.
+Explain your data collection method and provide a short table of your results.
+Interpret your data and explain interesting features.}
+
+\exercise{In the second experiment we measured velocities of balls before and after collision with different masses.
+Again explain your data collection method and provide a table.
+This table should include information about masses, times, velocities, and momenta.
+Interpret the data.
+Explain how this experiment and the previous fit into a larger picture pointing toward the concept of momentum being a good one.}
+
+\exercise{Furnish your observations of simple momentum conservation a bit more precisely in the following two examples: a frictionless brick hits another one.
+Their masses are $m_1,m_2$.
+Given their initial velocities $v_1,v_2$, find their final velocities.
+
+This problem comes in two parts: first, assume the collision is ``elastic" - the bricks don't slow down at all due to their collision, so the naive calculation is the correct one.
+
+Second, assume the collision is ``totally inelastic" - after the collision, the bricks are stuck together.}
+
+\exercise{Explain how conservation of momentum is modified by the presence of an external force.}
+
+\exercise{A circus acrobat of mass $M$ leaps straight up with initial velocity $v_0$ from a trampoline.
+As he rises up, he takes a trained monkey of mass
+$m$ off a perch at a height h above the trampoline.
+
+What is the maximum height attained by the pair? }
+
+\exercise{We will model a bouncing ball coming to rest.
+You drop a ball of mass $m$ from a height $h$.
+When it hits the floor, it receives an impulse $J$.
+What must $J$ be so that the ball reaches the same height after every bounce.
+
+Find $J$ so that the ball reaches half of its maximum height prior to the bounce.
+If the ball has a radius $r$, how many bounces until it stops?
+Note: this may be slightly confusing, throughout we are treating the ball as a point object and in the final step we give the point a ``size."
+In your analysis you should think of the ball still as a point, but the size as a cutoff that prevents it from bouncing further.
+If you like, if the ball can't jump higher than its center of mass, then it cannot jump at all.}
+
+\exercise{A cannon is angled at an angle $\theta$ from horizontal on a frictionless table (maybe it's a small cannon).
+A cannonball of mass $m$ rests inside and upon firing has muzzle velocity $v$.
+Using that horizontal momentum is conserved (no friction), find the recoil velocity of the cannon.}
+
+\exercise{A truck with mass $M$ is carrying logs, total mass $m$.
+The truck is traveling with velocity $v$ when the logs break free and cover the highway.
+You may assume that the logs are strapped together and detach instantaneously.
+What is the velocity of the truck when this occurs?
+
+What if instead, a nefarious hook type device grabs the logs and stops their motion instantaneously?}
+
+\exercise{We will learn how to double jump in this problem.
+From a crouched start, you (with mass $m$) can jump with a momentum of $p$.
+Compute the maximum height of your jump.
+
+What is your max height if you're holding a rock of mass $M$?
+
+If you throw your rock at a height $h$ during your jump with velocity $v$, what is your max height?
+
+How fast do you need to throw the rock to surpass your original jump height?}
+
+\exercise{One of your friends stands on your shoulders carrying a hoard of $N$ baseballs each with mass $m$.
+The combined mass of you and your friend is $M$.
+The two of you would like to go to space with this setup.
+They are standing on you, since the both of you agreed that they have the better throwing arm.
+If your friend throws baseballs with an initial velocity $v$, how often must they throw for the two of you to overcome gravity?
+You may ignore the mass of the baseballs on your back for this calculation.
+
+Assuming that $M=120$kg (average mass of two people), $m=0.1$kg, and $v$ is the average pitching speed of Justin Verlander (your friend is an incredible pitcher), get a real number for the pitching rate.
+
+Now that we know how ridiculous this is, let's do a small simulation.
+Say that your friend pitches at the constant rate required to overcome gravity for the two of you and every baseball in your collection (that is, the total mass in the formula you computed for the rate is now $M+Nm$).
+Write down a finite difference equation that describes the collective velocity of you, your friend, and the remaining balls you're carrying.
+How many balls will it take you to reach escape velocity?
+How long does it take?
+
+You have just described a biomechanical rocket launch.}
+
+\exercise{You are a pool shark about to sink the 8 ball to the dismay of your clearly grief stricken opponent (soon to be a couple dollars lighter).
+There are three points of interest.
+The cue ball is placed at the origin (wherever that is), the 8 ball is located at $(x_8,y_8)$ in a cartesian coordinate system, and the pocket that you have called is at $(x_0,y_0)$.
+
+If both balls are mass $m$ and radius $r$, at what angle should you strike the cue ball so that the 8 ball takes a straight line path to the pocket?
+Assume that collisions are elastic and there is no friction.}
+
+\exercise{One way to measure the velocity of a projectile is a ballistic pendulum.
+This is a wooden block of mass $M$ into which a bullet is shot, suspended by cables of length $l$, and which swings to a maximum angle $\phi$ after impact.
+
+How fast is the block moving immediately after impact?
+
+Show how to find the velocity of the bullet by measuring $m,M,l$.}
+
+
+\chapter{Energy}
+
+\exercise{Reproduce the derivation of the work-energy theorem.
+Annotate your work along the way, explaining why each step is true in your own words.
+By ``in your own words" I mean ``provide an explanation that you personally find is the intuitive deeper reason for the statement's truth."}
+
+\exercise{Give your best intuitive explanation for what kinetic energy ``is."}
+
+\exercise{In the last chapter you performed an experiment colliding bouncy balls.
+Update your data table by recording the kinetic energies at each step.
+Interpret your results.
+
+Further, update your calculation of the frictionless sliding blocks by computing kinetic energies.}
+
+\exercise{Provide a few examples each of conservative and non-conservative forces.
+What do the examples within each class have in common with each other?}
+
+\exercise{How can the net force be computed using the work done as a function of space?}
+
+\exercise{Derive the potential energy for the harmonic oscillator.
+Graph the potential.
+Mark a particle at a give position $x$ on the potential.
+Given what you know about Hooke's law, what direction does the particle accelerate in?
+How does this compare to the slope of the potential?
+Give this observation a ``physical" interpretation.}
+
+\exercise{Derive Newton's equation for a conservative force by using conservation of energy.}
+
+\exercise{Using conservation of energy, if you release a particle from rest on a potential graph, what is the maximum height the particle will reach?
+Explain how that translates to the maximum distance from equilibrium the particle will reach.}
+
+\exercise{Recreate the potential graph presented in class.
+Given an arbitrary potential energy graph and marked points for particles released at the given position, qualitatively describe the motion of each of said particles.}
+
+\exercise{Two balls of masses $m$ and $M$ are stacked on top of one another.
+They are dropped to floor from a height $h$, which is the distance between the floor and bottom of the nearest ball.
+Assume that all collisions are elastic, and that $m\ll M$ (that is, $m/M$ is very small and may be limited to zero).}
+
+\exercise{Look up the magnetic Lorentz force.
+Is it conservative?
+
+Drag?
+Argue why or why not.
+
+In disastrous news, the earth has begun to hollow out, reducing its mass as a function of time and inducing a time dependence in gravitational acceleration: $g(t)=g_0-ht$ where $g_0$ is the usual acceleration at sea level and $h$ is a new constant.
+Decide if the corresponding force is conservative and argue via energy considerations and work line integrals.}
+
+\exercise{A block of mass $m$ falls from a height $h$ onto a spring with constant $k$.
+Assume that the initial collision is totally inelastic (energy is lost to heat).
+Use conservation of energy and momentum to find:
+
+\begin{itemize}{\item The total compression length $\ell$ of the spring
+\item The point at which the block loses contact with the platform
+\item The velocity at which the block is launched}\end{itemize}
+Comment on your results.
+In particular, find the minimum height to drop the block so that it is guaranteed to launch.}
+
+\exercise{You are interested in understanding the decay of heavy nuclei.
+One decay channel is known as beta decay, wherein a nucleus turns a neutron into a proton and an electron.
+The electron is ejected from the nucleus at a nonzero velocity in order to conserve energy.
+
+If the change in energy of the nucleus is $-\Delta E$ with $\Delta E>0$ and the mass of the ejected electron is $m_e$, what is momentum of the electron assuming that the electron and nucleus are the only decay products?
+Recall that in order to conserve energy, the change in energy of the nucleus must be equal to the mass and kinetic energy of the electron.
+
+You take this calculation to your friend to run an experiment and they find horrible disagreement.
+Not only are the empirical values wrong, but you predicted a single number for the momentum of the electron, whereas the experiment found a distribution of values!
+We will take on faith that the nucleus randomly chooses a direction to fly in when a decay occurs.
+This is a fact from quantum mechanics that is not terribly important right now.
+
+You conclude that there must be more decay products than just the electron and the nucleus.
+Explain why this conclusion makes sense (use an intuitive argument and equations to back up your claim).
+
+Note: This is how the neutrino was discovered (one of the most glaring holes in the modern theory of particle physics).
+I recommend taking a moment to find and read about this experiment, especially if you are having difficulty explaining the conclusion.}
+
+\exercise{A photon is the massless particle that every living thing on earth with ``eyes" uses to see.
+They are massless, but still carry momentum (which should communicate that momentum is more fundamental than mass or velocity) and their frequency (read: color) is proportional to their momentum.
+In particular, the frequency $\nu=c/\lambda$ with $\lambda$ the wavelength is related to the momentum $p$ by $\nu=2\pi pc/\hbar$.
+Where $\hbar$ is a known constant (read h-bar) called the reduced Planck constant.
+
+This fact can be exploited to measure the speed of an object, by comparing the color of the sent and received rays.
+If you ever get a speeding ticket, blame the photons.
+
+You are hiding at a hidden spot on the road, waiting to catch someone speeding.
+Someone zooms by.
+With your handy radar gun with emitting wavelength $\lambda_0$, you measure a return wavelength of $\lambda=\lambda_0+\delta\lambda$.
+How fast was the car moving?}
+
+\exercise{}
+
+
+
+\chapter{Angular Momentum}
+
+\exercise{A plank of length $2L$ leans against a wall.
+It starts to slip downward without friction.
+Show that the top of the plank loses contact with the wall when it is at two·thirds of its initial height.}
+
+\exercise{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,681 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       	    Preamble                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{book}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\setlength{\headheight}{23pt}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{multirow}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{yfonts}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[colorlinks]{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[sorting=none]{biblatex}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+{\theoremstyle{definition} \newtheorem{exercise}{Exercise}}
+{\theoremstyle{definition} \newtheorem{definition}{Definition}}
+{\theoremstyle{definition} \newtheorem{note}{Note}}
+{\theoremstyle{definition} \newtheorem{notei}{Note*}}
+\newtheorem*{remark}{Remark}
+\newtheorem*{warning}{Warning}
+\newtheorem*{example}{Example}
+
+\begin{document}
+
+\tableofcontents
+\mainmatter
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\<}{\left\langle}
+\renewcommand{\>}{\right\rangle}
+\renewcommand{\Re}[1]{\text{Re}\ #1}
+\renewcommand{\Im}[1]{\text{Im}\ #1}
+\renewcommand{\mod}[1]{(\operatorname{mod}#1)}
+%\newcommand{\itemize}[1]{\begin{itemize}#1\end{itemize}}
+
+
+
+
+
+
+
+
+%\chapter{Math Methods}
+%
+%\exercise{For $v\in\R^3$, with the usual $\hat x,\hat y,\hat z$ orthonormal basis chosen.
+%Let $\alpha,\beta,\gamma$ with $v\cdot\hat x=|v|\alpha$, $v\cdot\hat y=|v|\beta$, $v\cdot\hat z=|v|\gamma$.
+%Show that $\alpha^2+\beta^2+\gamma^2=1$.}
+%
+%\exercise{Show that if $|v-w|=|v+w|$, then $v\perp w$ for $v,w\in\R^n$.}
+%
+%\exercise{Prove that the diagonals of an equilateral parallelogram are orthogonal.}
+%
+%\exercise{Prove the law of sines using the cross product.
+%Hint: What is the area of the triangle formed by $a,b,c$ with $a+b+c=0$?}
+%
+%\exercise{A tire rolls in a straight line without slipping, with center of mass velocity $v$ a constant.
+%At $t=0$ a pebble lodged flush within the tread of the tire touches the road.
+%Find the position, velocity, and acceleration of the pebble as a function of time.}
+%
+%\exercise{Go through the steps of integration to show the following:
+%
+%\item $$\int_1^2 dr \int_0^\pi d\theta \text{ } r^2\sin\theta\exp(-i\pi r\cos\theta)=-\frac{6}{\pi^2}.$$
+%
+%Attack this in the following way: compute the $\theta$ integral first by changing your variable of integration, noting that $d\cos\theta=\sin\theta d\theta$.
+%Don't forget to tend to your limits of integration!
+%The final step is a single integration by parts on an integrand that looks like $2r\sin r$.
+%
+%Note that the final answer is related to the solution of the famous Basel problem and $\zeta(2)$ where $\zeta$ is the Riemann-$\zeta$ function.
+%I encourage you to peruse the Wikipedia pages on both of these.}
+
+
+\chapter{Kinematics}
+
+\note{Most of physics is just unit analysis.
+You have some set of numbers in a problem and your goal is to multiply them together so that you get another number at the end with the right units.}
+
+\notei{A single strand of horse hair breaks at a tension $T$.
+A rope is made of $N$ horse hairs and it's attached to an object of mass $m$.
+How high must you drop the object from in order to break the rope when you catch it at the other end?
+Just use unit analysis and plug in approximate numbers you find online.
+We will return to this in a bit.
+
+This is a bit contrived, but it can inform someone with a quick calculation for instance, how deep a water well can be and have their rope survive if they drop their retrieval bucket.}
+
+\note{An example from particle physics: in the 1930s, Enrico Fermi constructed a simple theory to describe beta decay of atomic nuclei (when a nucleus decays into a daughter nucleus and an electron).
+The theory essential contains a single parameter, $G_F=1.166 3787(6)\times10^{-5}\text{GeV}^{-2}$.
+Where the $(6)$ means the final quoted digit, $7$ is known to $\pm6$.
+The single parameter quantifies the interaction strength between protons, neutrons, electrons, and a then unknown particle, the neutrino.}
+
+\notei{Use unit analysis to create an energy from $G_F$ and predict the existence of the electroweak scale.}
+
+\note{By taking a single square root you've shown that there is new physics at around $100$GeV.
+Indeed, the masses of the W, Z, and Higgs boson are all more or less $100$GeV$/c^2$.
+
+Simple modeling and unit conversions get you most of the way there in physics and more precise use of mathematics lets you build from there.
+Physics is ultimately an intuitive science where we want to work out what the answer should be before even starting a problem.}
+
+\note{Discuss displacement and average velocity
+
+Instantaneous velocity, acceleration}
+
+\notei{Short problems on straight line motion}
+
+\note{World is not two dimensional, we live in 3 spatial dimensions but often problems can be cast as 1 or 2d.
+
+How do we land an egg on top of a platform?}
+
+\note{Need to describe motion in 2d, we will use cartesian coordinates.}
+
+\notei{Displacement between points in the 2d plane.
+Draw a triangle.
+The displacement is the hypotenuse.}
+
+\notei{Similarly, if I go to a point $p$ and then a point $q$, what was the intermediate step?}
+
+\note{Vector addition is component-wise.}
+
+\note{Vector multiplication}
+
+\notei{In the previous example, how far did we travel?
+This furnishes the idea of an inner product.}
+
+\note{How can I find the area of the triangle generated by $p$ and $q$?}
+
+\notei{They go through the geometric argument by using right triangles.}
+
+\note{Notice that this operation can be defined as at the level of the vectors pointing to $p$ and $q$ and this generates the idea of the cross product.
+The cross product computes the area of the parallelogram (twice the triangle) and produces a vector out of the page with magnitude said area.
+
+Note that cross product makes most sense in 3d and in general produces a vector orthogonal to the two you started with.}
+
+\note{Velocities (accelerations) are also computed component-wise.}
+
+\notei{They begin working through the egg problem.}
+
+\note{It's not always convenient to work in cartesian coordinates.}
+
+\notei{Given a point $p$ with coordinates $(x,y)$, draw a right triangle between that point and the origin.
+
+Write the angle $\theta$ between the $x$ axis and the hypotenuse in terms of $x$ and $y$.
+Write the hypotenuse $r$ in terms of $x,y$.
+Now going backwards write $x$ and $y$ in terms of $r,\theta$.}
+
+\note{Two equations and two unknowns, so $x$ and $y$ are fully determined by $r,\theta$.
+This system is called radial polar coordinates.}
+
+\notei{The equation $x^2+y^2=r^2$ describes a set of points.
+Describe that set in polar coordinates.}
+
+\note{Polar coordinates can equally be understood as cutting up the plane into concentric circles as converting coordinates through right triangles.}
+
+\note{In this coordinate system, the velocity of a particle is described by its radial and angular velocity.
+Note that angular velocity has units of $1/t$ since angles are unitless.}
+
+\notei{A ball is spun around with an angular velocity $\omega$ at a radius $r$.
+What is the velocity of the ball tangent to its motion?
+Guess the answer with unit analysis, then make a short geometric argument that you're correct.}
+
+\notei{You are given a ball attached to a string, resting on a frictionless table of height $h$.
+The ball is being spun with an angular velocity $\omega$ when the string snaps.
+How far away from the table is the ball when it hits the ground?}
+
+\notei{They go through first Eratosthenes problem together.
+
+Approximate your result for large separation between earth and sun.}
+
+
+\chapter{Newton's Laws}
+
+\note{In this chapter we have a discussion of Newton's laws followed by an exploration of their applications through a smattering of important examples.}
+
+\note{Discussion of Newton's first two laws at a very intuitive level.}
+
+\notei{If an asteroid is sent toward earth from deep in space, will it make it here?
+How fast will it be going if it reaches us?}
+
+\note{Discussion of Newton's third law - intuitive notion of what a force is.
+$F=ma$ is an axiom of Newtonian mechanics.}
+
+\notei{Simple force problems in workbook.}
+
+\notei{A book sits on a table, what force should the table provide to hold up the book?}
+
+\note{The above is called a normal force.}
+
+\notei{An engineer gives you a building (generous) and your task is to analyze normal forces that hold the building together.
+
+Give two examples of important normal forces in this context (pick your favorite building) and estimate how strong they must be.}
+
+\note{Friction is another easily motivated force - rub your hands together.
+Note that the precise mechanism underlying friction is complicated.
+The only way forward is to model the interfaces of two solids in contact as large scale quantum mechanical objects.}
+
+\notei{Derive the coefficient of friction from time to stop sliding.}
+
+\notei{Compute static friction from maximum force to get an object moving.}
+
+\notei{What should the relative sizes of static and kinetic friction coefficients be?
+What would happen if the order were reversed?
+You should see that this second case is nonsense.}
+
+\notei{Friction problems}
+
+\note{}
+
+\notei{Ball spun in circle.}
+
+\notei{Let's design a roller coaster.
+}
+
+
+
+\chapter{Momentum}
+
+\note{Throw a ball at one of my students.
+
+What did you feel in your hand when you caught it?
+It was pushed back!}
+
+\notei{Come take a recording of small ball rolling off my desk.
+
+Checking frame by frame, how does the horizontal velocity of the ball at the start of motion compare to the horizontal velocity when the ball strikes the floor?}
+
+\note{These are both manifestations of ``conservation of momentum."
+
+Momentum is mass times velocity and is in some sense more fundamental than either of its constructive concepts.
+This is an idea that we will now explore.}
+
+\note{We will first discuss momentum conservation as an empirical fact.}
+
+\note{As a first guess, we might assume that velocity is ``conserved."
+That is to say, the total velocity of objects in our system is the same at all time steps, provided that the system is closed.}
+
+\notei{You are given two balls each of (wildly) different masses.
+Note which of the two is heavier by feel.
+
+Again by recording, roll one of the balls into the other.
+Note down what the velocity of each of the balls is before and after the collision.
+Compare the sum of velocities before and after.}
+
+\note{Depending on the difference in masses, your result will be very poor.}
+
+\notei{Now using a scale, measure the mass of each ball.
+Compute the total momentum on either side of the collision and compare.}
+
+\note{Now we have (hopefully [crosses fingers]) justified that thinking of conserving momentum is a good idea and in particular a better one than conserving velocity.
+
+Indeed, conservation of momentum is more than empirical fact, but a fundamental property of the geometry of our universe (I will note over and over again that the empirical ideas present at the time of Newton ended up being realized as facts about geometry; this is an observation that has continued to yield interesting fruit to the modern day).}
+
+\note{We will now discuss a smattering of examples to understand the consequences of momentum conservation.}
+
+\notei{Furnish your observations of simple momentum conservation a bit more precisely in the following two examples: a frictionless brick hits another one.
+Their masses are $m_1,m_2$.
+Given their initial velocities $v_1,v_2$, find their final velocities.
+
+This problem comes in two parts: first, assume the collision is ``elastic" - the bricks don't slow down at all due to their collision, so the naive calculation is the correct one.
+
+Second, assume the collision is ``totally inelastic" - after the collision, the bricks are stuck together.
+
+In the real world, every collision lives somewhere in between these, but creating a fully precise calculation is almost always impossible.
+The issue is that there are many forms of dissipation, e.g. sound, friction, air drag, maybe the bricks chip a little, etc.
+We will ignore all of these complications.
+The two cases you will perform are usually good enough, so why should you make your life harder than it has to be?}
+
+\notei{Cannon problem.}
+
+\notei{Pool problem.}
+
+\notei{What happens to momentum conservation if there's a nonzero force?}
+
+\note{Forces can be thought of as things that measure violation of conservation of momentum.}
+
+\notei{Circus problem.}
+
+\note{A sometimes useful notion is something called an ``impulse."
+This can be understood as time-averaging the force side of Newton's law.
+The idea is that it may be simpler (and more practical) to compute the change in momentum than to fully solve Newton's equations.
+
+Give a short and intuitive derivation.}
+
+\notei{When do you think talking about impulses rather than forces would be useful?
+Useless?}
+
+\note{Impulses are useful for forces that are strong for a short period of time.}
+
+\notei{Bouncy ball problem.
+How many bounces until it stops?
+
+Try this empirically.}
+
+\notei{We've discussed how momentum changes through a change in velocity.
+How else can momentum change?}
+
+\note{We can also change mass.
+This is how rockets work.}
+
+\notei{A truck with mass $M$ is carrying logs, total mass $m$.
+The truck is traveling with velocity $v$ when the logs break free and cover the highway.
+You may assume that the logs are strapped together and detach instantaneously.
+What is the velocity of the truck when this occurs?
+
+What if instead, a nefarious hook type device grabs the logs and stops their motion instantaneously?}
+
+\notei{We will learn how to double jump in this problem.
+From a crouched start, you (with mass $m$) can jump with a momentum of $p$.
+Compute the maximum height of your jump.
+
+What is your max height if you're holding a rock of mass $M$?
+
+If you throw your rock at a height $h$ during your jump with velocity $v$, what is your max height?
+
+How fast do you need to throw the rock to surpass your original jump height?}
+
+\notei{``Rocket" problem.}
+
+\notei{Ballistic pendulum problem.}
+
+
+\chapter{Energy}
+
+\note{A related notion is conservation of energy.
+Unfortunately, we don't really know what energy is yet.}
+
+\note{We will find motivation for one of the most powerful concepts in physics - energy - in the work-energy theorem.
+First we need a few rules from calculus.}
+
+\note{The chain rule: if $v$ is a function of $x$ and $x$ is a function of $t$, then we may write: $\frac{dv}{dt}=\frac{dx}{dt}\frac{dv}{dx}$.
+This looks like we're treating differentials as ``fractions," but there is a rigorous reason why this statement is true.
+Fortunately, most of the ways we can think to treat differentials as fractions will work.}
+
+\note{Newton's third law can be written as $F(x)=m\dot v$.
+We assume that $F$ is a function only of the position.
+We can integrate both sides with respect to $x$: $\int dx F=\int dx m\dot v$.
+
+We can also use the chain rule to write $dx=\frac{dx}{dt}dt=vdt$.
+This allows us to further write $\int dx F=m\int dtv\dot v$.}
+
+\note{Now we notice that (again using the chain rule) $\frac{d}{dt}(v^2)=\frac{dv^2}{dt}=\frac{dv}{dt}\frac{dv^2}{dv}=2v\dot v$.}
+
+\note{Now we work backwards and realize $\int dx F=\frac{1}{2}m\int dt\frac{d}{dt}v^2$.}
+
+\note{We can perform a final simplification using the fundamental theorem of calculus.
+This says that the derivative and integral are sort of inverses of one another: $\int_{a}^b dt \frac{d}{dt}f(t)=f(a)-f(b)$.}
+
+\note{We finally write that $\int dx F=\frac{1}{2}m(v_f^2-v_i^2)=K_f-K_i$.}
+
+\note{In the final equality we've defined a quantity we will call the kinetic energy.
+You should think of this as a way to measure how much a body can act on another by bumping into it.
+You might say that the heavier an object and the faster it's moving, the more kinetic energy it has.}
+
+\note{We would like to assign some intuition to what energy ``is."
+This is a hard thing to do since it is obviously so contrived.
+We might like to say that energy quantifies how much an object or system may act on another.
+
+This is all imprecise and there isn't really anything to be done about it since energy arose in an abstract context and so any attempt to wrangle it within your mind will only kick the can down to further abstract nonsense.
+We will soon talk about potential energy which gives credence to the thought of ``how much can an object do?" or ``how much damage can an object do?" as grounding phrases.
+
+Later in your studies you will realize that conservation of energy and momentum are in fact the same statement which is a geometric property of the universe we happen to inhabit.
+I cannot emphasize enough that the history of physics is largely a story of people coming up with ad hoc empirical rules and people coming along later to point out those rules place within a larger geometric framework.
+This is a trend that is still happening today with our collective struggle to understand quantum field theory.}
+
+\notei{Now that we know what energy is, go through the experimental exercises with bouncy balls and observe that energy is conserved.
+Perform the full calculation in the context of frictionless blocks colliding elastically and compare.
+How well does this statement hold up with our rudimentary setup?}
+
+\notei{Particle decay problem.
+Emphasize that this experiment is still haunting us to this day.}
+
+\note{Discussion of conservative forces.
+Write down general vector form of work.
+Almost all forces in nature of interest are explicitly conservative or are secretly generated by conservative forces.
+So understanding conservative forces is understanding the vast majority of physics.
+
+The only phenomena to my knowledge at the time of writing that does not fall under this umbrella is gravity.
+Although, gravity is well approximated as a conservative force and seemed to be so at the time of Newton, so we will pretend that it is.
+
+If you wish to read about this example, cosmology is described by general relativity and conservation of energy is violated quite badly at this scale due to the cosmological constant (no one knows what this is or what it means).}
+
+\notei{Come up with some examples of conservative and non-conservative forces.
+What does each class have in common?}
+
+\note{Notice that most conservative forces depend exclusively on the position of the particle under its influence.}
+
+\notei{Considering the work integral in the work-energy theorem, how can we compute the force using this integral?}
+
+\note{This observation motivates a new definition in the potential energy.
+Since work in this case is path independent we may write $\int_a^b dr\dot F=U_a-U_b$, where $U_a=U(r_a)$, etc.
+The work-energy theorem can then be written $U_a+K_a=U_b+K_b$.
+And we have a new conservation law!}
+
+\notei{Newton's equation from energy conservation.}
+
+\note{We see that conservation of energy is extraordinarily powerful.
+Indeed, for conservative forces, it is equivalent to Newton's equation and being a scalar is something exceedingly easy to work with and build intuition.}
+
+\notei{Derive the potential energy for the harmonic oscillator.
+Graph the potential.
+Mark a particle at a give position $x$ on the potential.
+Given what you know about Hooke's law, what direction does the particle accelerate in?
+How does this compare to the slope of the potential?
+Give this observation a ``physical" interpretation.}
+
+\note{We see that a particle experiencing a conservative force ``rolls down" the potential energy graph.
+This can be used to build a great deal of intuition about many physical systems.}
+
+\notei{Using conservation of energy, if you release a particle from rest on a potential graph, what is the maximum height the particle will reach?
+Explain how that translates to the maximum distance from equilibrium the particle will reach.}
+
+\notei{Given an arbitrary potential energy graph and marked points for particles released at the given position, qualitatively describe the motion of each of said particles (here draw a horrible thing on the board and have students come up to give descriptions one by one).}
+
+\notei{Springboard bounce problem.}
+
+\notei{Radar gun problem.}
+
+
+
+\chapter{Angular Momentum}
+
+\note{We're going to meet now yet another conservation law, this time related to rotational motion.}
+
+\notei{We have met angular velocity before.
+Given a ball swinging in a circle on a string of length $l$ with tangential velocity $v$, what is the magnitude of the angular velocity?}
+
+\note{This is something we've discussed before, but we didn't talk about the direction the angular velocity points in.}
+
+\notei{Argue what direction the angular velocity in the previous case should point in.
+Note that you have two orthogonal vectors and you want to combine them in a way that makes a new one.
+There is really only one sensible way to do this.}
+
+\notei{Argue that, using your right hand, the direction of angular velocity is the direction your thumb points when your fingers point in the tangential direction.
+This is one case of a slew of mnemonics known as right hand rules.
+They appear whenever a cross product is used to compute something.}
+
+\note{Choose a representative to sit in the swivel chair and another to capture video.
+Chair person hold bike wheel in front of you and quickly flip it upside down.}
+
+\notei{Provide a description of your experiment and a table of results.
+Interpret your data.
+Is angular velocity conserved?
+Can you find some other quantity that is conserved?}
+
+\note{The some other quantity is angular momentum and it is a rotational analogue to linear momentum.}
+
+\notei{Show that in your experiment angular momentum is conserved, defined as $L=r\times p$ where $p$ is the tangential momentum and $r$ the vector pointing from the center of rotation.}
+
+\notei{Compute the angular momentum of an object moving in a straight line.}
+
+\notei{Compute the final angular momenta in your experiment using the appropriate conservation law.}
+
+\note{We also have an analogue of an angular force known as torque: $\tau=r\times F$ where $r$ is the same as before and $F$ is the force.}
+
+\notei{Show that $\frac{d}{dt}L=\tau$ using that $\frac{d}{dt}r=v$, $\frac{d}{dt}v=a$ and that the cross product of any vector with itself is zero.
+Explain why this is a rotational analogue to Newton's equation.}
+
+\note{Let's explore some strange consequences.
+We see that the change in angular momentum over time is \textit{perpendicular} to the direction of an applied force.
+This can cause some very odd things indeed.}
+
+\notei{Consider a rod with wheel spinning (otherwise known as a gyroscope) so that it has angular momentum $L=L_x\hat x$.
+Then say we expose this system to the force of gravity: $F=mg\hat z$.
+What direction is the torque at this instant?
+What do you expect will happen to the rod as time progresses?}
+
+\note{So we see that a gyroscope pulled down by gravity simply refuses to fall and precesses in a circle forever.
+Extremely weird.}
+
+\note{Gyroscope's strange behavior has applications abound.
+For one that I am aware of, gyroscopic precession of a top in orbit can be used to measure the angular momentum of the earth from space.
+So to emphasize, you are one step closer to understanding an experimental confirmation of general relativity (our current theory of gravity).}
+
+\notei{Here we do a short calculation to this effect:
+
+In the simplest case, the angular momentum precesses as: $L_x=L_0\sin\Omega t$, $L_y=L_0\cos\Omega t$ where $\Omega=\frac{G}{c^2 r^3}S_z$ is the gyroscopic frequency induced by the rotation of the earth.
+$G$ is newton's constant, $c$ is the speed of light, $r$ is the distance from the space station to the center of the earth.
+If the gyroscope is located on the international space station, how long will it take the gyroscope to make a full revolution?}
+
+\note{Kinetic energy is also a useful concept in the rotational context.}
+
+\notei{Write down linear velocity in terms of angular velocity and then $v^2$ in terms of $\omega$ and $r$.
+Now use this to write down the kinetic energy of a point mass in terms of the angular velocity.}
+
+\note{You will find that $K=\frac{1}{2}I\omega^2$ where $I=mr^2$ is the moment of inertia.}
+
+\notei{Discuss what is the physical significance of $I$.
+If mass measures how hard it is to push something in a line, what does $I$ measure?
+Explain this in relation to your real life experience.}
+
+\note{For a collection of objects, the moment of inertia is computed similarly to the total mass: $M=\sum m_i$, $I=\sum m_i r_i^2$.
+The calculations for these quantities for distributions of mass is challenging and we will not attempt it.}
+
+\note{We consider the conical pendulum as an example.}
+
+\notei{Compute the magnitude of the angular momentum of the conical pendulum with length $l$ and angular velocity $\omega$ at the bottom of the pendulum.
+Perform the same calculation at the top.
+Compare the two cases.
+Describe geometrically the motion of the angular momentum vector at each chosen base point.}
+
+\notei{In the same case as the previous problem, compute the magnitude of the torque at both base points.
+To do this, note that the force due to gravity is cancelled out by the tension in the string.}
+
+\note{A central force is one that points }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
